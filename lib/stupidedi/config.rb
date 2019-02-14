@@ -151,6 +151,7 @@ module Stupidedi
           x.register("002001", "PO", "830") { Stupidedi::Contrib::TwoThousandOne::TransactionSetDefs::PO830 }
           x.register("002001", "FA", "997") { Stupidedi::Contrib::TwoThousandOne::TransactionSetDefs::FA997 }
 
+          x.register("003010", "IN", "810") { Stupidedi::Contrib::ThirtyTen::TransactionSetDefs::IN810 }
           x.register("003010", "RA", "820") { Stupidedi::Contrib::ThirtyTen::TransactionSetDefs::RA820 }
           x.register("003010", "PO", "850") { Stupidedi::Contrib::ThirtyTen::TransactionSetDefs::PO850 }
           x.register("003010", "PC", "860") { Stupidedi::Contrib::ThirtyTen::TransactionSetDefs::PC860 }
