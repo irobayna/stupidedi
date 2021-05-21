@@ -3,7 +3,7 @@ source "http://rubygems.org"
 gem "cantor", "~> 1.2.1"
 
 group :development do
-  gem "rake"
+  gem "rake", ">= 12.3.3"
   gem "term-ansicolor"
 
   gem "rspec", "3.8.0"
