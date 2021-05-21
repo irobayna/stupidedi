@@ -72,11 +72,6 @@ module Stupidedi
         true
       end
 
-      # @return [AbstractSet<CodeList>]
-      def code_lists
-        @element_uses.map(&:code_lists).inject(&:|)
-      end
-
       # @return [void]
       def pretty_print(q)
         q.text "SegmentDef[#{@id}]"

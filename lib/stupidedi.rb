@@ -54,4 +54,16 @@ module Stupidedi
       k.split(":")
     end
   end
+
+  @@external_code_lists = Stupidedi::Schema::ExternalCodeListStorage.empty
+
+  class << self
+    def external_code_lists
+      @@external_code_lists
+    end
+  end
+
+  def self.configure
+    yield self
+  end
 end

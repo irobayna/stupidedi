@@ -17,7 +17,7 @@ module Stupidedi
       # @return [SegmentDef]
       attr_reader :definition
 
-      def_delegators :definition, :id, :name, :descriptor, :code_lists
+      def_delegators :definition, :id, :name, :descriptor
 
       # @see X222 B.1.1.3.12.6 Data Segment Requirement Designators
       #

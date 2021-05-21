@@ -257,6 +257,12 @@ module Stupidedi
                 else
                   value = ansi.red(@value)
                 end
+              elsif definition.code_list.try(&:external?)
+                if definition.code_list.defined_at?(@value)
+                  value = "#{@value}: " + ansi.dark(definition.code_list.at(@value))
+                else
+                  value = ansi.red(@value)
+                end
               else
                 value = @value
               end

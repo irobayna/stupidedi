@@ -8,7 +8,7 @@ module Stupidedi
 
       def_delegators :requirement, :forbidden?, :required?, :optional?
 
-      def_delegators :definition, :code_lists
+      def_delegators :definition
 
       # @return [Symbol]
       abstract :id

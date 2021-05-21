@@ -63,11 +63,6 @@ module Stupidedi
         Values::CompositeElementVal.new([], usage)
       end
 
-      # @return [AbstractSet<CodeList>]
-      def code_lists
-        @component_uses.map(&:code_lists).inject(&:|)
-      end
-
       # @return [void]
       def pretty_print(q)
         q.text("CompositeElementDef[#{@id}]")

@@ -19,8 +19,6 @@ module Stupidedi
 
       abstract :composite?
 
-      # @return [AbstractSet<CodeList>]
-      abstract :code_lists
 
       # @return [String]
       def descriptor

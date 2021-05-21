@@ -38,14 +38,6 @@ module Stupidedi
       def component_use(requirement, parent = nil)
         ComponentElementUse.new(self, requirement, Sets.universal, parent)
       end
-
-      # This is overridden (if needed) by the concrete subclasses. Specifically
-      # the "ID" element types have an extra attribute to link the CodeList.
-      #
-      # @return [AbstractSet<CodeList>]
-      def code_lists(subset = Sets.universal)
-        Sets.empty
-      end
     end
   end
 end

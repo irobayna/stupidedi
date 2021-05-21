@@ -13,7 +13,9 @@ module Stupidedi
       end
 
       class Internal < CodeList
-        def_delegators :@hash, :at, :defined_at?
+        attr_reader :hash
+
+        def_delegators :hash, :at, :defined_at?
 
         def initialize(hash)
           @hash = hash
@@ -21,53 +23,39 @@ module Stupidedi
 
         # @return [Array<String>]
         def codes
-          @hash.keys
+          hash.keys
         end
 
         def external?
           false
         end
-
-        # Some elements are qualifiers that select which code list
-        # is applicable to the qualified element. For instance, the
-        # diagnosis codes in the HI segment are qualified by E1270
-        # "Code List Qualifier Code", which indicates which code list
-        # should be used to validate the E1271's diagnosis code. It
-        # maybe ICD-9, ICD-10, etc.
-        #
-        # @return [AbstractSet<CodeList>]
-        def code_lists(subset = Sets.universal)
-          related =
-            @hash.select do |k, v|
-              subset.include?(k) and v.is_a?(Schema::CodeList)
-            end
-
-          if subset.finite?
-            Sets.build([self]) + related.map{|k,v| v }
-          else
-            Sets.build([self])
-          end
-        end
       end
 
       class External < CodeList
-        # @return [String]
         attr_reader :id
+
+        def_delegators :code_dictionary, :at, :defined_at?
 
         def initialize(id)
           @id = id
+        end
+
+        def codes
+          code_dictionary.keys
         end
 
         def external?
           true
         end
 
-        def code_lists(values = Sets.universal)
-          Sets.build([self])
-        end
-
         def to_str
           "CodeList.external(#{@id})"
+        end
+
+        private
+
+        def code_dictionary
+          Stupidedi.external_code_lists.fetch(id)
         end
       end
     end
