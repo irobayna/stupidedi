@@ -153,6 +153,7 @@ module Stupidedi
           x.register("003040", "WA", "142") { Stupidedi::TransactionSets::ThirtyForty::Standards::WA142 }
           x.register("003050", "PO", "850") { Stupidedi::TransactionSets::ThirtyFifty::Standards::PO850 }
           x.register("004010", "PO", "850") { Stupidedi::TransactionSets::FortyTen::Standards::PO850 }
+          x.register("004010", "IN", "810") { Stupidedi::TransactionSets::FortyTen::Standards::IN810 }
           x.register("004010", "PR", "855") { Stupidedi::TransactionSets::FortyTen::Standards::PR855 }
           x.register("004010", "OW", "940") { Stupidedi::TransactionSets::FortyTen::Standards::OW940 }
           x.register("004010", "AR", "943") { Stupidedi::TransactionSets::FortyTen::Standards::AR943 }

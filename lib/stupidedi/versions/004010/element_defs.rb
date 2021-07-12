@@ -5411,7 +5411,9 @@ module Stupidedi
           s::CodeList.build(
             "PE" => "Price per Each",
             "PP" => "Price per Pound",
-            "UM" => "Price per Unit of Measure"))
+            "UM" => "Price per Unit of Measure",
+            "PC" => "Price per Case",
+            "ZZ" => "Mutually Defined"))
         E640  = t::ID.new(:E640 , "Transaction Type Code"                , 2, 2,
           s::CodeList.build(
             "01" => "Location Address Message",
@@ -9461,6 +9463,71 @@ module Stupidedi
           s::CodeList.external("559"))
         E1715 = t::ID.new(:E1715, "Country Subdivision Code"             , 1, 3,
           s::CodeList.external("5"))
+        E1716  = t::AN.new(:E1716 , "Change Order Sequence Number"       , 1, 8)
+        E1717  = t::ID.new(:E1717 , "Allowance or Charge Indicator"      , 1, 1,
+          s::CodeList.build(
+            "A"   => "Allowance",
+            "C"   => "Charge",
+            "N"   => "No Allowance or Charge"))
+        E1718  = t::ID.new(:E1718 , "Allowance or Charge Indicator"      , 4, 4,
+          s::CodeList.build(
+            "A310"   => "Air Express Charge",
+            "A930"   => "Carrier Credit Allowance",
+            "B720"   => "Cooperative Advertising Allowance",
+            "B820"   => "Currency Adjustment",
+            "B860"   => "Customs Broker Fee",
+            "B870"   => "Customs Charge",
+            "B872"   => "Customs Duty",
+            "B994"   => "Declared Value for Customs",
+            "C000"   => "Defective Allowance",
+            "C040"   => "Delivery",
+            "C260"   => "Discount - Incentive",
+            "C860"   => "Expedited Shipments",
+            "D170"   => "Free Goods",
+            "D240"   => "Freight",
+            "D360"   => "Goods and Services Tax Charge",
+            "D500"   => "Handling",
+            "D900"   => "Installation",
+            "E170"   => "Labeling",
+            "F155"   => "Packaging",
+            "F330"   => "Pick-up and Delivery",
+            "F920"   => "Quantity Surcharge",
+            "G740"   => "Service Charge",
+            "G970"   => "Small Order Charge",
+            "H090"   => "Special Handling",
+            "H151"   => "Special Services",
+            "H640"   => "Tax - Excist Tax - Destination",
+            "H740"   => "Tax - Sate and Use",
+            "H770"   => "Tax - Sate Tax",
+            "H750"   => "Tax - Sales Tax",
+            "H800"   => "Tax - VAT",
+            "I170"   => "Trade Discountt",
+            "ZZZZ"   => "Mutually Defined"))
+        E1719  = t::AN.new(:E1719 , "Agency Service, Promotion, Allowance, or Charge Code"       , 1, 10)
+        E1720  = t::ID.new(:E1720 , "Allowance/Charge Percent Qualifier"                   , 1, 1)
+        E1721  = t:: R.new(:E1721 , "Rate"                , 1,  10)
+        E1722  = t::ID.new(:E1722 , "Allowance or Charge Method of Handling Code"           , 2, 2)
+        E1723  = t::AN.new(:E1723 , "Option Number"             , 1, 20)
+        E1724  = t::ID.new(:E1724 , "Tax Type Code"           , 2, 2)
+        E1725  = t::ID.new(:E1725 , "Tax Jurisdiction Code Qualifier"           , 2, 2)
+        E1726  = t::AN.new(:E1726 , "Tax Jurisdiction Code"             , 1, 10)
+        E1727  = t::ID.new(:E1727 , "Tax Exempt Code"                   , 1, 1)
+        E1728  = t::ID.new(:E1728 , "Relationship Code"                   , 1, 1)
+        E1729  = t:: R.new(:E1729 , "Dollar Basis for Percent"                , 1,  9)
+        E1730  = t::AN.new(:E1730 , "Tax Identification Number"             , 1, 20)
+        E1731  = t::AN.new(:E1731 , "Assigned Identification"             , 1, 20)
+        E1732  = t:: R.new(:E1732 , "Quantity Invoiced"                , 1,  10)
+        E1733  = t::ID.new(:E1733 , "Terms Type Code"                   , 2, 2)
+        E1734  = t::ID.new(:E1734 , "Terms Basis Date Code"                   , 1, 2)
+        E1735  = t::DT.new(:E1735  , "Terms Discount Due Date"                     , 8, 8)
+        E1736   = t::Nn.new(:E1736  , "Terms Discount Days Due"                      , 1, 3, 0)
+        E1737  = t::DT.new(:E1737  , "Terms Net Due Date"                     , 8, 8)
+        E1738   = t::Nn.new(:E1738  , "Terms Net Days"                      , 1, 3, 0)
+        E1739   = t::Nn.new(:E1739  , "Terms Discount Amount"                      , 1, 10, 2)
+        E1740  = t::DT.new(:E1740  , "Terms Deferred Due Date"                     , 8, 8)
+        E1741   = t::Nn.new(:E1741  , "Deferred Amount Due"                      , 1, 10, 2)
+        E1742   = t::Nn.new(:E1742  , "Day of Month"                      , 1, 2, 0)
+        E1743  = t::ID.new(:E1743 , "Payment Method Code"                   , 1, 2)
         C001  = Schema::CompositeElementDef.build(:C001,
           "Composite Unit of Measure",
           "To identify a composite unit of measure",

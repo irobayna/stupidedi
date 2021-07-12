@@ -12,6 +12,7 @@ module Stupidedi
         autoload :IM210, "stupidedi/transaction_sets/004010/standards/IM210"
         autoload :OW940, "stupidedi/transaction_sets/004010/standards/OW940"
         autoload :PO850, "stupidedi/transaction_sets/004010/standards/PO850"
+        autoload :IN810, "stupidedi/transaction_sets/004010/standards/IN810"
         autoload :PR855, "stupidedi/transaction_sets/004010/standards/PR855"
         autoload :PS830, "stupidedi/transaction_sets/004010/standards/PS830"
         autoload :QM214, "stupidedi/transaction_sets/004010/standards/QM214"
